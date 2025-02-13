@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import Thought from "../models/Thought.js";
-import mongoose from "mongoose"; // For ID validation
+import mongoose from "mongoose"; 
 
 // Fetch all users
 export const fetchUsers = async (req, res) => {

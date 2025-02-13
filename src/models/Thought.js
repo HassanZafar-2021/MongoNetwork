@@ -22,21 +22,21 @@ const thoughtSchema = new Schema(
       type: String,
       required: [true, "Associated username is required"],
     },
-    reactions: [reactionSchema], // Embedded reactions
+    reactions: [reactionSchema], 
   },
   {
     toJSON: {
       virtuals: true,
       getters: true,
     },
-    id: false, // Prevents Mongoose from adding a virtual "id" field
+    id: false, 
   }
 );
 
-// Virtual to compute reaction count
+
 thoughtSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
-// Export Thought model
+
 export default model("Thought", thoughtSchema);

@@ -36,14 +36,14 @@ const userSchema = new Schema(
       virtuals: true,
       getters: true,
     },
-    id: false, // Prevents Mongoose from adding a virtual "id" field, but _id still exists
+    id: false, 
   }
 );
 
-// Virtual to compute friend count
+
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
-// Export User model
+
 export default model("User", userSchema);
